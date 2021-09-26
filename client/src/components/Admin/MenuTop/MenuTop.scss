@@ -1,0 +1,26 @@
+@import "../../../scss/index.scss";
+
+.menu-top {
+  display: flex;
+
+  &__left-logo {
+    max-height: 65px;
+    padding: 0 10px;
+    max-width: 100%;
+  }
+  &__right {
+    position: absolute;
+    right: 0;
+  }
+
+  button {
+    color: $fntl;
+    &:hover {
+      color: $pc;
+    }
+    &:focus,
+    &:active {
+      color: $fntl;
+    }
+  }
+}
