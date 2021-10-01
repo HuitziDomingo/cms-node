@@ -55,7 +55,7 @@ export default function RegisterForm() {
             })
     }
 
-    const register = () => {
+    const register = async () => {
         let { email, password, repeatPassword, privacyPolicy } = formValid
         let emailVal = inputs.email
         let passwordVal = inputs.password
@@ -77,7 +77,14 @@ export default function RegisterForm() {
                     description: "La clave tiene que ser igual."
                 })
             else {
-                let result = signUpApi(inputs)
+                let result = await signUpApi(inputs)
+                if (!result.ok)
+                    notification['error']({
+                        message: result.message
+                    })
+                else notification['success']({
+                    message: result.message
+                })
             }
         }
     }

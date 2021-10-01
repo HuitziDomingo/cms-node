@@ -27,7 +27,7 @@ const signUp = (req, res) => {
                     else {
                         if (!userStored)
                             res.status(500).send({ message: "Error del servidor" })
-                        else res.status(200).send({ message: userStored })
+                        else res.status(200).send({ user: userStored })
                     }
                 })
             }
